@@ -3,7 +3,6 @@ let g:terminal_path = getcwd()
 
 inoremap <C-\> <C-w>
 nnoremap U <C-r> 
-tnoremap <esc> <c-\><c-N>
 
 "saving files and exit vim
 nnoremap <leader>wf :w!<CR> 
@@ -15,7 +14,7 @@ nnoremap <leader>qq :q<CR>
 nnoremap <leader>tt :Bw<cr> :qa<cr> 
 
 "file fuzzy searching
-nnoremap <silent><C-p> :Files<CR>
+nnoremap <silent><C-p> :FZF<CR>
 
 "file managers
 nnoremap <silent><leader>rt :RnvimrToggle<CR>
@@ -24,6 +23,10 @@ nnoremap <silent><leader>nt :Lexplore<CR>
 "cicling buffers
 nnoremap <leader>[ :bprevious<CR>
 nnoremap <leader>] :bnext<CR>
+
+"cicling quickfix
+nnoremap <leader>' :cnext<CR>
+nnoremap <leader>; :cprevious<CR>
 
 "renombrar buffer usar arg y argdo para refactor completo
 nnoremap <leader>lp :%s/
@@ -82,7 +85,7 @@ nnoremap <leader>mt :MaximizerToggle<cr>
 "Archivos de configuracion
 nnoremap <leader>cd :cd %:h <CR>
 nnoremap <silent><leader>SO :e $MYVIMRC<CR>
-nnoremap <silent><leader>sm :e ~/.config/nvim/config/remaps.vim<CR>
+nnoremap <silent><leader>sm :e ~/.vim/remaps.vim<CR>
 nnoremap <silent><leader>so :so $MYVIMRC<CR>
 
 "block the arrow keys

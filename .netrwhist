@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/elias/Documentos/go_proyects/poliapi/api'
+let g:netrw_dirhist_4='/home/elias/Documentos/go_proyects/poliapi'
+let g:netrw_dirhist_3='/home/elias/Documentos/go_proyects/poliapi/docs'
+let g:netrw_dirhist_2='/home/elias/Documentos/go_proyects/poliapi/storage'
+let g:netrw_dirhist_1='/home/elias/Documentos/go_proyects/poliapi/utils'
+let g:netrw_dirhist_0='/home/elias/Documentos/go_proyects/poliapi/types'
+let g:netrw_dirhist_9='/home/elias/Documentos/go_proyects/poliapi'
+let g:netrw_dirhist_8='/home/elias'
+let g:netrw_dirhist_7='/home/elias/.vim'
+let g:netrw_dirhist_6='/home/elias/.vim/after/plugin'

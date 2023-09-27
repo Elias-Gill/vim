@@ -1,20 +1,20 @@
+" I supose this would be running on a unix machine anyways
+source $HOME/.vim/remaps.vim
+
 "  ----------------------
 " |   plugins section    |
 "  ----------------------
-" automatic install of vim PLUG
-let g:dotvim = '...'
-if empty(glob(g:dotvim . '/autoload/plug.vim'))
-    silent execute '!curl -fLo ' . g:dotvim . '/autoload/plug.vim --create-dirs '
-                \ . '"https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" I supose this would be running on a unix machine anyways
-source $HOME/.vim/config/remaps.vim
 call plug#begin()
 
 " colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -59,7 +59,6 @@ set confirm
 set hidden
 set shortmess+=c
 set undofile
-set jumpoptions=stack
 set clipboard+=unnamedplus
 set cmdheight=1
 
@@ -87,7 +86,11 @@ set fillchars=fold:\
 set fillchars+=diff:╱
 set completeopt=menuone,noselect
 set laststatus=2
-colorscheme gruvbox
+
+"colorscheme
+set background=dark
+let g:gruvbox_contrast="hard"
+colorscheme molokai
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
@@ -123,7 +126,6 @@ command Q :q
 "  ----------------------
 " |     netrw options    |
 "  ----------------------
-File browsing options
 let g:netrw_liststyle = 3
 let g:netrw_keepdir = 0
 let g:netrw_hide = 1  
@@ -145,10 +147,9 @@ augroup netrw_mappings
     autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
 augroup END
 
-" Auto-close on exit
-lua << EOF
-vim.api.nvim_create_autocmd("BufEnter", {
-    command = "if winnr('$') == 1 && &filetype =~ 'netrw' | quit | endif",
-nested = true,
-})
-EOF
+" Open quickfix when vimgrep
+augroup myvimrc
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
