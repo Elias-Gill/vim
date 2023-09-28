@@ -17,7 +17,6 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 nnoremap <silent><C-p> :FZF<CR>
 
 "file managers
-nnoremap <silent><leader>rt :RnvimrToggle<CR>
 nnoremap <silent><leader>nt :Lexplore<CR>
 
 "cicling buffers
