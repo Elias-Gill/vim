@@ -74,7 +74,6 @@ set tw=125
 set wrap linebreak
 set colorcolumn=90
 set splitbelow splitright
-set splitkeep=screen
 
 " --- Visuals ---
 set showcmd
