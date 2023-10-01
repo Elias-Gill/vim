@@ -98,10 +98,13 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " --- better grep and search ---
-set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set grepformat=%f:%l:%c:%m
+if executable('rg')
+    "use ripgrep instead of grep if possible
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+endif
 
-" Open quickfix when vimgrep
+" Open quickfix when grep
 augroup myvimrc
     autocmd!
     autocmd QuickFixCmdPost [^l]* cwindow

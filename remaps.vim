@@ -15,6 +15,8 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 
 "file fuzzy searching
 nnoremap <silent><C-p> :FZF<CR>
+nnoremap <leader>f :silent grep! 
+nnoremap <leader>F :vimgrep! 
 
 "file managers
 nnoremap <silent><leader>nt :Lexplore<CR>
@@ -27,7 +29,6 @@ nnoremap <leader>] :bnext<CR>
 nnoremap <leader>' :cnext<CR>
 nnoremap <leader>co :copen<CR>
 nnoremap <leader>; :cprevious<CR>
-nnoremap <leader>f :grep! 
 
 "renombrar buffer usar arg y argdo para refactor completo
 nnoremap <leader>lp :%s/
