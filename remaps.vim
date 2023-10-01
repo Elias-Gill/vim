@@ -25,7 +25,9 @@ nnoremap <leader>] :bnext<CR>
 
 "cicling quickfix
 nnoremap <leader>' :cnext<CR>
+nnoremap <leader>co :copen<CR>
 nnoremap <leader>; :cprevious<CR>
+nnoremap <leader>f :grep! 
 
 "renombrar buffer usar arg y argdo para refactor completo
 nnoremap <leader>lp :%s/

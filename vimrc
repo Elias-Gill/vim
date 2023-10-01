@@ -97,6 +97,17 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+" --- better grep and search ---
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m
+
+" Open quickfix when vimgrep
+augroup myvimrc
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
+
 " --- Tabs to spaces ---
 set tabstop=4 softtabstop=4
 set expandtab
@@ -145,11 +156,4 @@ augroup netrw_mappings
 
     autocmd filetype netrw noremap <silent><buffer> a <Nop>
     autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
-augroup END
-
-" Open quickfix when vimgrep
-augroup myvimrc
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
 augroup END
