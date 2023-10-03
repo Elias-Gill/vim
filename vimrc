@@ -68,6 +68,7 @@ set confirm
 set hidden
 set shortmess+=c
 set nobackup
+set noundofile
 set clipboard+=unnamedplus
 set cmdheight=1
 
