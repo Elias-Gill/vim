@@ -4,10 +4,18 @@ source $HOME/.vim/remaps.vim
 "  ----------------------
 " |   plugins section    |
 "  ----------------------
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if has('win32')
+    if empty(glob('~/vimfiles/autoload/plug.vim'))
+        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
+        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+else
+    let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+    if empty(glob(data_dir . '/autoload/plug.vim'))
+        silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
 endif
 
 call plug#begin()
@@ -58,7 +66,7 @@ set autoindent
 set confirm
 set hidden
 set shortmess+=c
-set undofile
+set nobackup
 set clipboard+=unnamedplus
 set cmdheight=1
 
