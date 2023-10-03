@@ -26,6 +26,7 @@ Plug 'tomasr/molokai'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/nerdtree'
 Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 

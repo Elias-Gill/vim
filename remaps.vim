@@ -19,7 +19,7 @@ nnoremap <leader>f :silent grep!
 nnoremap <leader>F :vimgrep! 
 
 "file managers
-nnoremap <silent><leader>nt :Lexplore<CR>
+nnoremap <silent><leader>nt :NERDTreeToggle<CR>
 
 "cicling buffers
 nnoremap <leader>[ :bprevious<CR>
