@@ -15,8 +15,12 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 
 "file fuzzy searching
 nnoremap <silent><C-p> :FZF<CR>
+
+"usefull grep mappings
 nnoremap <leader>f :silent grep! 
-nnoremap <leader>F :vimgrep! 
+nnoremap <leader>F :silent vimgrep! 
+nnoremap gR :silent grep! <c-r><c-w><cr>
+nnoremap gr :silent vimgrep! <c-r><c-w> **<cr>
 
 "file managers
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
