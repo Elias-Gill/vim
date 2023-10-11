@@ -21,7 +21,6 @@ endif
 call plug#begin()
 
 " colorscheme
-Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 
 " navigation
@@ -71,6 +70,8 @@ set nobackup
 set noundofile
 set clipboard+=unnamedplus
 set cmdheight=1
+set wildoptions=pum
+set wildmenu
 
 " --- mouse ands line numbers ---
 set nu rnu
@@ -90,16 +91,17 @@ set showcmd
 set showmode
 set scrolloff=4
 set termguicolors
-set signcolumn=yes
+set signcolumn=auto
 set fillchars=fold:\ 
 set fillchars+=diff:╱
+set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
 
 "colorscheme
 set background=dark
-let g:gruvbox_contrast="hard"
 colorscheme molokai
+hi VertSplit guibg=NONE
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
@@ -169,3 +171,11 @@ augroup netrw_mappings
     autocmd filetype netrw noremap <silent><buffer> a <Nop>
     autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
 augroup END
+
+function Autoclosetree()
+    if winnr('$') == 1 && bufname() =~ 'NERD_tree_' . tabpagenr() | quit | endif
+endfunction
+augroup closeTree
+    autocmd BufEnter * call Autoclosetree()
+augroup END
+
