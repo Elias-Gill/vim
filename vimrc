@@ -22,6 +22,7 @@ call plug#begin()
 
 " colorscheme
 Plug 'tomasr/molokai'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -31,12 +32,17 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Utils
 Plug 'Asheq/close-buffers.vim'
+Plug 'roblillack/vim-bufferlist'
 Plug 'tpope/vim-repeat'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
+
+" ---- Plugins configuration ----
+let g:NERDCreateDefaultMappings = 1
 
 "  ----------------------
 " |   general options    |
@@ -70,7 +76,7 @@ set nobackup
 set noundofile
 set clipboard+=unnamedplus
 set cmdheight=1
-set wildoptions=pum
+set wildoptions=pum,fuzzy
 set wildmenu
 
 " --- mouse ands line numbers ---
@@ -100,8 +106,10 @@ set laststatus=2
 
 "colorscheme
 set background=dark
-colorscheme molokai
+colorscheme catppuccin_mocha
 hi VertSplit guibg=NONE
+hi Normal guibg=NONE
+" colorscheme molokai
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
@@ -178,4 +186,3 @@ endfunction
 augroup closeTree
     autocmd BufEnter * call Autoclosetree()
 augroup END
-

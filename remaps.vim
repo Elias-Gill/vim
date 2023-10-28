@@ -30,6 +30,7 @@ nnoremap <silent><leader>nt :NERDTreeToggle<CR>
 "cicling buffers
 nnoremap <leader>[ :bprevious<CR>
 nnoremap <leader>] :bnext<CR>
+map <silent><leader>bl :call BufferList()<CR>
 
 "cicling quickfix
 nnoremap <leader>' :cnext<CR>
@@ -107,3 +108,9 @@ nnoremap <silent><up> :resize +5<CR>
 nnoremap <silent><down> :resize -5<CR>
 nnoremap <silent><left> :vertical resize -5<CR>
 nnoremap <silent><right> :vertical resize +5<CR>
+
+" NerdComments
+nnoremap <silent>gcc <plug>NERDCommenterToggle
+nnoremap <silent>gcb <plug>NERDCommenterMinimal
+vnoremap <silent>gc <plug>NERDCommenterToggle
+vnoremap <silent>gb <plug>NERDCommenterMinimal
