@@ -107,9 +107,10 @@ set laststatus=2
 "colorscheme
 set background=dark
 colorscheme catppuccin_mocha
+
+" Mini colors customization
 hi VertSplit guibg=NONE
 hi Normal guibg=NONE
-" colorscheme molokai
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
