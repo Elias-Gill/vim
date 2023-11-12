@@ -29,6 +29,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/nerdtree'
 Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'elias-gill/vim-markdown-concealed'
 
 " Utils
 Plug 'Asheq/close-buffers.vim'
