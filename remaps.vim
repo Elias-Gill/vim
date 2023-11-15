@@ -14,14 +14,16 @@ nnoremap <leader>qq :q<CR>
 nnoremap <leader>tt :Bw<cr> :qa<cr> 
 
 "file fuzzy searching
-nnoremap <silent><C-p> :FZF<CR>
+nnoremap <silent><C-p> :Files<CR>
+nnoremap <silent><leader>f :RG<CR>
+nnoremap <silent><leader>of :History<CR>
 
 "usefull grep mappings
-nnoremap <leader>f :silent vimgrep! 
+"nnoremap <leader>f :silent vimgrep! 
 nnoremap gr :silent vimgrep! <c-r><c-w> **<cr>
 vnoremap gr y:silent vimgrep! /<c-r>"/ **<cr>
 
-nnoremap <leader>F :silent grep! 
+nnoremap <leader>F :silent vimgrep! 
 nnoremap gR :silent grep! <c-r><c-w><cr>
 
 "file managers

@@ -28,10 +28,11 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/nerdtree'
 Plug 'roblillack/vim-bufferlist'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'elias-gill/vim-markdown-concealed'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Utils
+Plug 'elias-gill/vim-markdown-concealed'
 Plug 'Asheq/close-buffers.vim'
 Plug 'roblillack/vim-bufferlist'
 Plug 'tpope/vim-repeat'
