@@ -17,14 +17,14 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 nnoremap <silent><C-p> :Files<CR>
 nnoremap <silent><leader>f :RG<CR>
 nnoremap <silent><leader>of :History<CR>
+nnoremap gR :Rg <c-r><c-w><cr>
+vnoremap gR y:Rg <c-r><c-w><cr>
 
 "usefull grep mappings
 "nnoremap <leader>f :silent vimgrep! 
 nnoremap gr :silent vimgrep! <c-r><c-w> **<cr>
 vnoremap gr y:silent vimgrep! /<c-r>"/ **<cr>
-
-nnoremap <leader>F :silent vimgrep! 
-nnoremap gR :silent grep! <c-r><c-w><cr>
+nnoremap <leader>F :silent vimgrep! **<left><left> <left>
 
 "file managers
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
@@ -43,6 +43,10 @@ nnoremap <leader>; :cprevious<CR>
 nnoremap <leader>lp :%s/
 vnoremap <leader>lp :s/
 
+" rename utils
+nnoremap <leader>rr yiw:%s/<c-r>"//g<left><left>
+vnoremap <leader>rr y:%s/<c-r>"//g<left><left>
+
 "cambiar pestanas
 nnoremap <leader>tn :tabnew<cr>
 
@@ -52,8 +56,6 @@ nnoremap N Nzzzv
 nnoremap <C-t> <C-t>zz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
-" nnoremap <C-d> zz<C-d>zz
-" nnoremap <C-u> zz<C-u>zz
 
 "primeagen cool remap to move lines
 vnoremap J :m '>+1<CR>gv=gv

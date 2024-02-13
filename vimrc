@@ -40,11 +40,14 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
 " ---- Plugins configuration ----
 let g:NERDCreateDefaultMappings = 1
+
+let g:indentLine_char_list = ['┊']
 
 "  ----------------------
 " |   general options    |
@@ -75,8 +78,9 @@ set confirm
 set hidden
 set shortmess+=c
 set nobackup
+set nolazyredraw
 set noundofile
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set cmdheight=1
 set wildoptions=pum,fuzzy
 set wildmenu
@@ -109,10 +113,14 @@ set laststatus=2
 "colorscheme
 set background=dark
 colorscheme catppuccin_mocha
+"colorscheme molokai
 
 " Mini colors customization
 hi VertSplit guibg=NONE
 hi Normal guibg=NONE
+hi MatchParen guibg=#585858
+hi VertSplit guifg=#585858
+hi EndOfBuffer guifg=#585858
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
