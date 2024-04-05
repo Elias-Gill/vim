@@ -23,6 +23,7 @@ call plug#begin()
 " colorscheme
 Plug 'tomasr/molokai'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'sainnhe/gruvbox-material'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -112,12 +113,16 @@ set laststatus=2
 
 "colorscheme
 set background=dark
-colorscheme catppuccin_mocha
+"colorscheme catppuccin_mocha
 "colorscheme molokai
 
+let g:gruvbox_material_foreground='mix'
+let g:gruvbox_material_better_performance=1
+colorscheme gruvbox-material
+
 " Mini colors customization
-hi VertSplit guibg=NONE
-hi Normal guibg=NONE
+"hi VertSplit guibg=NONE
+"hi Normal guibg=NONE
 hi MatchParen guibg=#585858
 hi VertSplit guifg=#585858
 hi EndOfBuffer guifg=#585858
