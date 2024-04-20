@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
+"Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
