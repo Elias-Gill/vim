@@ -20,11 +20,12 @@ nnoremap <silent><leader>of :History<CR>
 nnoremap gR :Rg <c-r><c-w><cr>
 vnoremap gR y:Rg <c-r><c-w><cr>
 
+nnoremap <silent><C-p> :Files<CR>
+
 "usefull grep mappings
 "nnoremap <leader>f :silent vimgrep! 
 nnoremap gr :silent vimgrep! <c-r><c-w> **<cr>
 vnoremap gr y:silent vimgrep! /<c-r>"/ **<cr>
-nnoremap <leader>F :silent vimgrep! **<left><left> <left>
 
 "file managers
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
@@ -36,7 +37,8 @@ map <silent><leader>bl :call BufferList()<CR>
 
 "cicling quickfix
 nnoremap <leader>' :cnext<CR>
-nnoremap <leader>co :copen<CR>
+nnoremap <expr><silent><leader>co empty(filter(getwininfo(), 'v:val.quickfix')) ? ':copen<CR>' : ':cclose<CR>:lclose<CR>'
+nnoremap <expr><silent><leader>lo empty(filter(getwininfo(), 'v:val.quickfix')) ? ':lopen<CR>' : ':lclose<CR>:cclose<CR>'
 nnoremap <leader>; :cprevious<CR>
 
 "renombrar buffer usar arg y argdo para refactor completo
