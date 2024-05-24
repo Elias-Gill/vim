@@ -32,6 +32,9 @@ Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" better quickfix
+Plug 'romainl/vim-qf'
+
 " Utils
 Plug 'elias-gill/vim-markdown-concealed'
 Plug 'Asheq/close-buffers.vim'
