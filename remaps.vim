@@ -38,10 +38,11 @@ map <silent><leader>bl :call BufferList()<CR>
 "cicling quickfix
 nnoremap <expr><silent><leader>co empty(filter(getwininfo(), 'v:val.quickfix')) ? ':copen<CR>' : ':cclose<CR>:lclose<CR>'
 nnoremap <expr><silent><leader>lo empty(filter(getwininfo(), 'v:val.quickfix')) ? ':lopen<CR>' : ':lclose<CR>:cclose<CR>'
-nnoremap <leader>; <Plug>(qf_qf_previous)
-nnoremap <leader>' <Plug>(qf_qf_next)
-"nnoremap <leader>' :cnext<CR>
-"nnoremap <leader>; :cprevious<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+
+"nnoremap <leader>; <Plug>(qf_qf_previous)
+"nnoremap <leader>' <Plug>(qf_qf_next)
 
 "renombrar buffer usar arg y argdo para refactor completo
 nnoremap <leader>lp :%s/

@@ -32,11 +32,8 @@ Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" better quickfix
-Plug 'romainl/vim-qf'
-
 " Utils
-Plug 'elias-gill/vim-markdown-concealed'
+Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
 Plug 'Asheq/close-buffers.vim'
 Plug 'roblillack/vim-bufferlist'
 Plug 'tpope/vim-repeat'
@@ -45,13 +42,16 @@ Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-"Plug 'tpope/vim-fugitive'
+
+" Unnused
+" Plug 'romainl/vim-qf'
+" Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 " ---- Plugins configuration ----
+packadd cfilter
 let g:NERDCreateDefaultMappings = 1
-
 let g:indentLine_char_list = ['┊']
 
 "  ----------------------
