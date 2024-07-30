@@ -43,6 +43,8 @@ Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 
+Plug 'bfrg/vim-qf-preview'
+
 " Unnused
 " Plug 'romainl/vim-qf'
 " Plug 'tpope/vim-fugitive'
@@ -144,6 +146,8 @@ if executable('rg')
 endif
 
 " Open quickfix when grep
+cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() =~# '^grep')  ? 'silent grep'  : 'grep'
+cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() =~# '^lgrep') ? 'silent lgrep' : 'lgrep'
 augroup myvimrc
     autocmd!
     autocmd QuickFixCmdPost [^l]* cwindow
