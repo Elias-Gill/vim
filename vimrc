@@ -91,10 +91,11 @@ set shortmess+=c
 set nobackup
 set nolazyredraw
 set noundofile
-set clipboard=unnamedplus
+set clipboard+=autoselect
 set cmdheight=1
 set wildoptions=pum,fuzzy
 set wildmenu
+set t_vb=
 
 " --- mouse ands line numbers ---
 set nu rnu
@@ -120,6 +121,7 @@ set fillchars+=diff:╱
 set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
+set guioptions=c
 
 "colorscheme
 set background=dark
