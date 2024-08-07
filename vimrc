@@ -1,4 +1,3 @@
-" I supose this would be running on a unix machine anyways
 if has('win32')
     source $HOME/vimfiles/remaps.vim
 else
@@ -134,7 +133,8 @@ let g:gruvbox_material_better_performance=1
 
 " Mini colors customization
 hi VertSplit guibg=NONE
-hi Normal guibg=#1c1c1c
+"hi Normal guibg=#1c1c1c
+hi Normal guibg=NONE
 hi MatchParen guibg=#585858
 hi VertSplit guifg=#585858
 hi EndOfBuffer guifg=#585858

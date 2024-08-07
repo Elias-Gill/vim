@@ -24,8 +24,8 @@ nnoremap <silent><C-p> :Files<CR>
 
 "usefull grep mappings
 "nnoremap <leader>f :silent vimgrep! 
-nnoremap gr :silent vimgrep! <c-r><c-w> **<cr>
-vnoremap gr y:silent vimgrep! /<c-r>"/ **<cr>
+nnoremap gr :silent grep! <c-r><c-w> <cr>
+vnoremap gr y:silent grep! /<c-r>"/ <cr>
 
 "file managers
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
@@ -103,8 +103,12 @@ nnoremap <leader>mt :MaximizerToggle<cr>
 "Archivos de configuracion
 nnoremap <leader>cd :cd %:h <CR>
 nnoremap <silent><leader>SO :e $MYVIMRC<CR>
-nnoremap <silent><leader>sm :e ~/.vim/remaps.vim<CR>
 nnoremap <silent><leader>so :so $MYVIMRC<CR>
+if has('win32')
+    nnoremap <silent><leader>sm :e $HOME/vimfiles/remaps.vim<CR>
+else 
+    nnoremap <silent><leader>sm :e ~/.vim/remaps.vim<CR>
+endif
 
 "block the arrow keys
 nnoremap <up> <nop>
