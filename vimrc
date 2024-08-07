@@ -1,5 +1,9 @@
 " I supose this would be running on a unix machine anyways
-source $HOME/.vim/remaps.vim
+if has('win32')
+    source $HOME/vimfiles/remaps.vim
+else
+    source $HOME/.vim/remaps.vim
+endif
 
 "  ----------------------
 " |   plugins section    |
@@ -119,16 +123,16 @@ set laststatus=2
 
 "colorscheme
 set background=dark
-"colorscheme catppuccin_mocha
+colorscheme catppuccin_mocha
 "colorscheme molokai
 
 let g:gruvbox_material_foreground='mix'
 let g:gruvbox_material_better_performance=1
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
 
 " Mini colors customization
-"hi VertSplit guibg=NONE
-"hi Normal guibg=NONE
+hi VertSplit guibg=NONE
+hi Normal guibg=#1c1c1c
 hi MatchParen guibg=#585858
 hi VertSplit guifg=#585858
 hi EndOfBuffer guifg=#585858
@@ -150,8 +154,8 @@ cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() =~# '^grep')  ? '
 cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() =~# '^lgrep') ? 'silent lgrep' : 'lgrep'
 augroup myvimrc
     autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
+    autocmd QuickFixCmdPost [^l]* cwindow | redraw!
+    autocmd QuickFixCmdPost l*    lwindow | redraw!
 augroup END
 
 " --- Tabs to spaces ---
