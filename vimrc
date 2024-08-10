@@ -30,7 +30,6 @@ Plug 'sainnhe/gruvbox-material'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'preservim/nerdtree'
 Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -47,6 +46,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 
 Plug 'bfrg/vim-qf-preview'
+
+Plug 'justinmk/vim-dirvish'
 
 " Unnused
 " Plug 'romainl/vim-qf'
@@ -108,6 +109,7 @@ set tw=125
 set wrap linebreak
 set colorcolumn=90
 set splitbelow splitright
+set splitkeep=screen
 
 " --- Visuals ---
 set showcmd
@@ -195,7 +197,7 @@ let g:netrw_hide = 1
 let g:netrw_list_hide = '^\.'
 let g:netrw_browse_split = 0
 let g:netrw_winsize = 20
-let g:netrw_banner = 0
+let g:netrw_banner = 1
 
 " Mappings
 augroup netrw_mappings
@@ -210,9 +212,16 @@ augroup netrw_mappings
     autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
 augroup END
 
-function Autoclosetree()
-    if winnr('$') == 1 && bufname() =~ 'NERD_tree_' . tabpagenr() | quit | endif
-endfunction
-augroup closeTree
-    autocmd BufEnter * call Autoclosetree()
+"function Autoclosetree()
+    "if winnr('$') == 1 && bufname() =~ 'NERD_tree_' . tabpagenr() | quit | endif
+"endfunction
+"augroup closeTree
+    "autocmd BufEnter * call Autoclosetree()
+"augroup END
+
+" close if final buffer is netrw or the quickfix
+augroup finalcountdown
+    au!
+    autocmd BufEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
+    "autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) || &buftype == 'quickfix' | q | endif
 augroup END

@@ -28,7 +28,7 @@ nnoremap gr :silent grep! <c-r><c-w> <cr>
 vnoremap gr y:silent grep! /<c-r>"/ <cr>
 
 "file managers
-nnoremap <silent><leader>nt :NERDTreeToggle<CR>
+nnoremap <silent><leader>nt :Lexplore<CR>
 
 "cicling buffers
 nnoremap <leader>[ :bprevious<CR>
@@ -45,12 +45,12 @@ nnoremap [q :cprevious<CR>
 "nnoremap <leader>' <Plug>(qf_qf_next)
 
 "renombrar buffer usar arg y argdo para refactor completo
-nnoremap <leader>lp :%s/
-vnoremap <leader>lp :s/
+nnoremap <leader>rn :%s/
+vnoremap <leader>rn :s/
 
-" rename utils
-nnoremap <leader>rr yiw:%s/<c-r>"//g<left><left>
-vnoremap <leader>rr y:%s/<c-r>"//g<left><left>
+"rename utils
+nnoremap <leader>rw yiw:%s/<c-r>"//g<left><left>
+vnoremap <leader>rw y:%s/<c-r>"//g<left><left>
 
 "cambiar pestanas
 nnoremap <leader>tn :tabnew<cr>
@@ -80,8 +80,8 @@ vnoremap y ygv<esc>
 nnoremap p p=`]
 
 "increments a decrements
-nnoremap + <C-a>
-nnoremap - <C-x>
+"nnoremap + <C-a>
+"nnoremap - <C-x>
 
 "teclas arriba y abajo en insert mode
 inoremap <C-j> <down>
