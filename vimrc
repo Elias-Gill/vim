@@ -45,7 +45,9 @@ Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 
-Plug 'bfrg/vim-qf-preview'
+if has("vim9script")
+    Plug 'bfrg/vim-qf-preview'
+endif
 
 Plug 'justinmk/vim-dirvish'
 
@@ -212,16 +214,9 @@ augroup netrw_mappings
     autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
 augroup END
 
-"function Autoclosetree()
-    "if winnr('$') == 1 && bufname() =~ 'NERD_tree_' . tabpagenr() | quit | endif
-"endfunction
-"augroup closeTree
-    "autocmd BufEnter * call Autoclosetree()
-"augroup END
-
-" close if final buffer is netrw or the quickfix
-augroup finalcountdown
-    au!
-    autocmd BufEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' |q|endif
-    "autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) || &buftype == 'quickfix' | q | endif
+function Autoclosetree()
+    if winnr('$') == 1 && bufname() =~ 'NetrwTreeListing' . tabpagenr() | quit | endif
+endfunction
+augroup closeTree
+    autocmd BufEnter * call Autoclosetree()
 augroup END
