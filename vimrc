@@ -93,7 +93,7 @@ set shortmess+=c
 set nobackup
 set nolazyredraw
 set noundofile
-set clipboard+=autoselect
+set clipboard^=unnamed,unnamedplus
 set cmdheight=1
 set wildoptions=pum,fuzzy
 set wildmenu
