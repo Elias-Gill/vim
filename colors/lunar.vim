@@ -1,23 +1,22 @@
 " Colors directly applied to highlights
-
 highlight ColorColumn guibg=#303030
-highlight CurSearch gui=reverse
-highlight IncSearch gui=reverse
 highlight FoldColumn guifg=#636363
 highlight Cursor guifg=#ebfcfb guibg=#031120
 highlight TermCursor guibg=NONE guifg=NONE gui=NONE guisp=NONE
 highlight CursorColumn guibg=#15222F
-highlight CursorLine guibg=#292929
+highlight CursorLine guibg=#252525
 highlight CursorLineNr guifg=#C492b1
 highlight lCursor guifg=#C492b1 guibg=#031120
-highlight EndOfBuffer guifg=#303030 guibg=#031120
+highlight EndOfBuffer guifg=#303030 guibg=NONE
 highlight MatchParen guibg=#4a4a4a
 highlight Substitute guifg=#031120 guibg=#C492b1
+highlight IncSearch guibg=NONE guifg=NONE gui=reverse
+highlight Search guifg=#ebfcfb guibg=#4a4a4a
+highlight CurSearch guifg=#97D7BD guibg=NONE gui=reverse
 
 highlight Normal guifg=#ebfcfb guibg=#191919
-highlight EndOfBuffer guifg=#ebfcfb guibg=#191919
-highlight NormalFloat guifg=#ebfcfb guibg=#031120
-highlight Visual guibg=#15222F
+highlight NormalFloat guifg=#ebfcfb guibg=#191919
+highlight Visual guibg=#323232
 highlight VisualNOS guifg=#031120 guibg=#4F345a
 
 highlight ErrorMsg guifg=#BC2c1A
@@ -33,13 +32,13 @@ highlight LineNr guifg=#636363
 highlight NonText guifg=#636363
 highlight Whitespace guifg=#303030
 
-highlight Pmenu guibg=#15222F
+highlight Pmenu guibg=#323232
 highlight PmenuExtra guifg=#7d7d7d guibg=#15222F
-highlight PmenuExtraSel guifg=#7d7d7d guibg=#15222F
+highlight PmenuExtraSel guifg=#7d7d7d guibg=#181818
 highlight PmenuKind guifg=#BC2c1A
 highlight PmenuKindSel guifg=#BC2c1A
 highlight PmenuSbar guibg=NONE guifg=NONE
-highlight PmenuSel guifg=#97D7BD
+highlight PmenuSel guifg=#97D7BD guibg=#282828
 highlight PmenuThumb guibg=#979797
 
 highlight Question guifg=#ebfcfb
@@ -51,7 +50,7 @@ highlight SpellCap guifg=NONE guibg=NONE
 highlight SpellLocal guifg=NONE guibg=NONE
 highlight SpellRare guifg=NONE guibg=NONE
 highlight ToolbarButton guifg=#031120 guibg=#ebfcfb
-highlight WildMenu guifg=#031120 guibg=#dbcfb0
+highlight WildMenu guifg=#031120 guibg=#323232
 
 highlight debugBreakpoint guifg=#4F345a
 highlight debugPC guifg=#4B8CCD
@@ -74,12 +73,12 @@ highlight TabLineFill guibg=#031120
 highlight TabLineSel guifg=#ebfcfb guibg=#031120
 highlight WinBar guifg=#ebfcfb
 highlight WinBarNC guifg=#7d7d7d
-highlight WinSeparator guifg=#636363 guibg=#031120
+highlight WinSeparator guifg=#636363 guibg=NONE
 
 highlight Title guifg=#C492b1
 
 " Syntax
-highlight Comment guifg=#636363
+highlight Comment guifg=#9a9290
 
 highlight Constant guifg=#C492b1
 highlight String guifg=#C492b1
@@ -122,11 +121,36 @@ highlight Ignore guifg=NONE guibg=NONE
 highlight Error guifg=#BC2c1A
 highlight Todo guifg=#4B8CCD guibg=#031120
 
+" Diagnostics
+highlight DiagnosticError guifg=#BC2c1A
+highlight DiagnosticHint guifg=#636363
+highlight DiagnosticInfo guifg=#979797
+highlight DiagnosticOk guifg=#698F3F
+highlight DiagnosticVirtualTextError guifg=#BC2c1A guibg=#18141F gui=italic
+highlight DiagnosticVirtualTextHint guifg=#636363 gui=italic
+highlight DiagnosticVirtualTextInfo guifg=#979797 guibg=#14202D gui=italic
+highlight DiagnosticVirtualTextOk guifg=#698F3F guibg=#15222F gui=italic
+highlight DiagnosticVirtualTextWarn guifg=#C79F4B guibg=#1F2526 gui=italic
+highlight DiagnosticWarn guifg=#C79F4B
+
+" Git signs
+highlight Added guifg=#698F3F
+highlight DiffAdded guifg=#698F3F
+highlight Removed guifg=#BC2c1A
+highlight DiffRemoved guifg=#BC2c1A
+highlight Changed guifg=#C492b1
+highlight DiffChanged guifg=#C492b1
+
 " Diff hl groups
 highlight DiffAdd guibg=#1A2D27
 highlight DiffChange guibg=#2E2E40
 highlight DiffDelete guibg=#2c0c0c
 highlight DiffText guibg=#4F345a
+
+" Plugins
+highlight GitSignsAddInline guifg=#4F345a guibg=NONE
+highlight GitSignsChangeInline guifg=#4F345a guibg=NONE
+highlight GitSignsDeleteInline guifg=#4F345a guibg=NONE
 
 " Fugitive
 highlight fugitiveStagedHeading guifg=#97D7BD
@@ -136,3 +160,17 @@ highlight fugitiveUnstagedModifier guifg=#BC2c1A
 highlight fugitiveUntrackedHeading guifg=#C492b1
 highlight fugitiveUntrackedModifier guifg=#BC2c1A
 highlight gitHashAbbrev guifg=#C79F4B
+
+" CMP
+highlight CmpItemKind guifg=#979797
+highlight CmpItemKindClass guifg=#97D7BD
+highlight CmpItemKindConstant guifg=#C492b1
+highlight CmpItemKindFunction guifg=#dbcfb0
+highlight CmpItemKindKeyword guifg=#7FB7BE
+highlight CmpItemKindModule guifg=#7FB7BE
+highlight CmpItemKindSnippet guifg=#BC2c1A
+highlight CmpItemKindText guifg=#636363
+highlight CmpItemKindVariable guifg=#b1b1b1
+
+" Copilot
+highlight CopilotSuggestion guifg=#4a4a4a gui=italic

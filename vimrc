@@ -27,6 +27,7 @@ call plug#begin()
 Plug 'tomasr/molokai'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'sainnhe/gruvbox-material'
+Plug 'drsooch/gruber-darker-vim'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -95,8 +96,6 @@ set nolazyredraw
 set noundofile
 set clipboard^=unnamed,unnamedplus
 set cmdheight=1
-set wildoptions=pum,fuzzy
-set wildmenu
 set t_vb=
 
 " --- mouse ands line numbers ---
@@ -111,7 +110,6 @@ set tw=125
 set wrap linebreak
 set colorcolumn=90
 set splitbelow splitright
-set splitkeep=screen
 
 " --- Visuals ---
 set showcmd
@@ -149,6 +147,7 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " --- better grep and search ---
+set ignorecase
 set grepformat=%f:%l:%c:%m
 if executable('rg')
     "use ripgrep instead of grep if possible
@@ -178,7 +177,6 @@ set encoding=utf-8
 set hlsearch
 set incsearch
 set showmatch
-set ignorecase
 set smartcase
 
 " python
@@ -220,3 +218,12 @@ endfunction
 augroup closeTree
     autocmd BufEnter * call Autoclosetree()
 augroup END
+
+"  ----------------------
+" |  newer vim versions  |
+"  ----------------------
+if v:version >= 800
+    set wildoptions=pum,fuzzy
+    set wildmenu
+    set splitkeep=screen
+endif

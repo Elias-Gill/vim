@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/elias/Proyectos/python_projects/is2/proyecto/modulos/Posts'
+let g:netrw_dirhist_1='/home/elias/Proyectos/python_projects/is2/proyecto'
+let g:netrw_dirhist_0='/home/elias'
+let g:netrw_dirhist_9='/home/elias/.vim'
 let g:netrw_dirhist_8='/home/elias'
 let g:netrw_dirhist_7='/home/elias/.vim'
 let g:netrw_dirhist_6='/home/elias/.vim/after'
 let g:netrw_dirhist_5='/home/elias/.vim'
 let g:netrw_dirhist_4='/home/elias/.vim/after/ftplugin'
 let g:netrw_dirhist_3='/home/elias/.vim'
-let g:netrw_dirhist_2='/home/elias/.vim/spell'
-let g:netrw_dirhist_1='/home/elias/.vim'
-let g:netrw_dirhist_0='/home/elias/.vim/colors'
-let g:netrw_dirhist_9='/home/elias/.vim'

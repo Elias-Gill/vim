@@ -16,7 +16,7 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 "file fuzzy searching
 nnoremap <silent><C-p> :Files<CR>
 nnoremap <silent><leader>f :RG<CR>
-nnoremap <silent><leader>of :History<CR>
+nnoremap <silent><leader>fo :History<CR>
 nnoremap gR :Rg <c-r><c-w><cr>
 vnoremap gR y:Rg <c-r><c-w><cr>
 
