@@ -126,20 +126,13 @@ set guioptions=c
 
 "colorscheme
 set background=dark
-colorscheme catppuccin_mocha
+"colorscheme catppuccin_mocha
+colorscheme lunar
 "colorscheme molokai
 
 let g:gruvbox_material_foreground='mix'
 let g:gruvbox_material_better_performance=1
 "colorscheme gruvbox-material
-
-" Mini colors customization
-hi VertSplit guibg=NONE
-"hi Normal guibg=#1c1c1c
-hi Normal guibg=NONE
-hi MatchParen guibg=#585858
-hi VertSplit guifg=#585858
-hi EndOfBuffer guifg=#585858
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
