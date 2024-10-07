@@ -15,6 +15,7 @@ highlight CurSearch guifg=#ebfcfb guibg=#4a4a4a
 highlight Search guibg=#252525 guifg=#e6b99d
 
 highlight Normal guifg=#ebfcfb guibg=#1b1b1b
+highlight NormalNc guifg=#ebfcfb guibg=#1b1b1b
 highlight NormalFloat guifg=#ebfcfb guibg=#191919
 highlight Visual guibg=#3b3b3e
 highlight VisualNOS guifg=#031120 guibg=#4F345a
@@ -68,8 +69,8 @@ highlight dirType guifg=#C492b1
 
 highlight StatusLine guifg=#ebfcfb guibg=#0C1A28
 highlight StatusLineNC guifg=#7d7d7d guibg=#031120
-highlight TabLine guifg=#ebfcfb guibg=#031120
-highlight TabLineFill guibg=#031120
+highlight TabLine guibg=NONE gui=NONE term=NONE cterm=NONE
+highlight TabLineFill guibg=NONE gui=NONE term=NONE cterm=NONE
 highlight TabLineSel guifg=#ebfcfb guibg=#031120
 highlight WinBar guifg=#ebfcfb
 highlight WinBarNC guifg=#7d7d7d
@@ -121,6 +122,8 @@ highlight Underlined gui=underline
 highlight Ignore guifg=NONE guibg=NONE
 highlight Error guifg=#BC2c1A
 highlight Todo guifg=#4B8CCD guibg=#031120
+
+highlight pythonSpaceError guibg=NONE
 
 " Diagnostics
 highlight DiagnosticError guifg=#BC2c1A
