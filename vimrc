@@ -172,10 +172,6 @@ set incsearch
 set showmatch
 set smartcase
 
-" python
-let g:python_highlight_all = 1
-let g:python_highlight_space_errors = 0
-
 " Borrar buffers sin usar
 command Bw :wa | Bwipeout hidden
 command W :w
@@ -215,7 +211,7 @@ augroup END
 "  ----------------------
 " |  newer vim versions  |
 "  ----------------------
-if v:version >= 800
+if v:version >= 900
     set wildoptions=pum,fuzzy
     set wildmenu
     set splitkeep=screen

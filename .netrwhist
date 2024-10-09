@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/elias/Proyectos/python_projects/is2/proyecto'
 let g:netrw_dirhist_2='/home/elias'
 let g:netrw_dirhist_1='/home/elias/Documentos/unrelated/DOOM-3-BFG/neo/sys/win32'
 let g:netrw_dirhist_0='/home/elias/.vim'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/elias/Documentos/unrelated/is2_copias'
 let g:netrw_dirhist_6='/home/elias/.vim'
 let g:netrw_dirhist_5='/home/elias'
 let g:netrw_dirhist_4='/home'
-let g:netrw_dirhist_3='/home/elias'
