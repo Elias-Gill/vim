@@ -108,6 +108,7 @@ set cursorline
 " --- wraping ---
 set tw=125
 set wrap linebreak
+set showbreak=⤷\ \ 
 set colorcolumn=90
 set splitbelow splitright
 
