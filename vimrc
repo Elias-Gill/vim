@@ -21,6 +21,7 @@ else
     endif
 endif
 
+" --------------------
 call plug#begin()
 
 " colorscheme
@@ -34,6 +35,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish' " dired like navigation
 
 " Utils
 Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
@@ -45,18 +47,14 @@ Plug 'tpope/vim-surround'
 Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
+" Plug 'tpope/vim-fugitive'
 
 if has("vim9script")
     Plug 'bfrg/vim-qf-preview'
 endif
 
-Plug 'justinmk/vim-dirvish'
-
-" Unnused
-" Plug 'romainl/vim-qf'
-" Plug 'tpope/vim-fugitive'
-
 call plug#end()
+" ----------------------
 
 " ---- Plugins configuration ----
 packadd cfilter
