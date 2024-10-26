@@ -90,8 +90,9 @@ set confirm
 set hidden
 set shortmess+=c
 set nobackup
-set nolazyredraw
+set noswapfile
 set noundofile
+set nolazyredraw
 set clipboard^=unnamed,unnamedplus
 set cmdheight=1
 set t_vb=

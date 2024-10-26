@@ -1,7 +1,7 @@
 " Colors directly applied to highlights
 highlight ColorColumn guibg=#303030
 highlight FoldColumn guifg=#636363
-highlight Cursor guifg=#ebfcfb guibg=#031120
+highlight Cursor guifg=#ebfcfb guibg=#031120 gui=reverse
 highlight TermCursor guibg=NONE guifg=NONE gui=NONE guisp=NONE
 highlight CursorColumn guibg=#15222F
 highlight CursorLine guibg=#252525 term=NONE cterm=NONE
