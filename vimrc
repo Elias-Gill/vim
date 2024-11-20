@@ -4,66 +4,6 @@ else
     source $HOME/.vim/remaps.vim
 endif
 
-"  ----------------------
-" |   plugins section    |
-"  ----------------------
-if has('win32')
-    if empty(glob('~/vimfiles/autoload/plug.vim'))
-        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
-        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
-else
-    let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-    if empty(glob(data_dir . '/autoload/plug.vim'))
-        silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
-endif
-
-" --------------------
-call plug#begin()
-
-" colorscheme
-Plug 'tomasr/molokai'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'sainnhe/gruvbox-material'
-Plug 'drsooch/gruber-darker-vim'
-
-" navigation
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'roblillack/vim-bufferlist'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish' " dired like navigation
-
-" Utils
-Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
-Plug 'Asheq/close-buffers.vim'
-Plug 'roblillack/vim-bufferlist'
-Plug 'tpope/vim-repeat'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-surround'
-Plug 'szw/vim-maximizer'
-Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
-" Plug 'tpope/vim-fugitive'
-
-if has("vim9script")
-    Plug 'bfrg/vim-qf-preview'
-endif
-
-call plug#end()
-" ----------------------
-
-" ---- Plugins configuration ----
-packadd cfilter
-let g:NERDCreateDefaultMappings = 1
-let g:indentLine_char_list = ['┊']
-
-"  ----------------------
-" |   general options    |
-"  ----------------------
 " --- folding ---
 set nofoldenable
 set foldmethod=syntax
@@ -216,3 +156,61 @@ if v:version >= 900
     set wildmenu
     set splitkeep=screen
 endif
+
+"  ----------------------
+" |   plugins section    |
+"  ----------------------
+if has('win32')
+    if empty(glob('~/vimfiles/autoload/plug.vim'))
+        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
+        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+else
+    let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+    if empty(glob(data_dir . '/autoload/plug.vim'))
+        silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+endif
+
+" --------------------
+call plug#begin()
+
+" colorscheme
+Plug 'tomasr/molokai'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'sainnhe/gruvbox-material'
+Plug 'drsooch/gruber-darker-vim'
+
+" navigation
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'roblillack/vim-bufferlist'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish' " dired like navigation
+
+" Utils
+Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
+Plug 'Asheq/close-buffers.vim'
+Plug 'roblillack/vim-bufferlist'
+Plug 'tpope/vim-repeat'
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
+Plug 'szw/vim-maximizer'
+Plug 'preservim/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive'
+
+if has("vim9script")
+    Plug 'bfrg/vim-qf-preview'
+endif
+
+call plug#end()
+" ----------------------
+
+" ---- Plugins configuration ----
+packadd cfilter
+let g:NERDCreateDefaultMappings = 1
+let g:indentLine_char_list = ['┊']
+
