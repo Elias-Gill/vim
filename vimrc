@@ -25,17 +25,13 @@ set nolist
 set smartindent
 set autoindent
 
-" --- specials & do not disturb ---
-set confirm
-set hidden
-set shortmess+=c
+" --- special options ---
 set nobackup
 set noswapfile
 set noundofile
 set nolazyredraw
 set clipboard^=unnamed,unnamedplus
-set cmdheight=1
-set t_vb=
+set ttimeoutlen=50 " solve delay when pressing the <esc> key
 
 " --- mouse ands line numbers ---
 set nu rnu
@@ -63,11 +59,18 @@ set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
 set guioptions=c
+set cmdheight=1
+
+" Do not disturb (t_vb= disables the terminal bell)
+set confirm
+set hidden
+set shortmess+=c
+set t_vb=
 
 "colorscheme
 set background=dark
-"colorscheme catppuccin_mocha
 colorscheme lunar
+"colorscheme catppuccin_mocha
 "colorscheme molokai
 
 let g:gruvbox_material_foreground='mix'
