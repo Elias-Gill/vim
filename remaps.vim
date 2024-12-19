@@ -127,3 +127,6 @@ nnoremap <silent>gcc <plug>NERDCommenterToggle
 nnoremap <silent>gcb <plug>NERDCommenterMinimal
 vnoremap <silent>gc <plug>NERDCommenterToggle
 vnoremap <silent>gb <plug>NERDCommenterMinimal
+
+" Fugitive
+nnoremap <leader>G :G<cr>

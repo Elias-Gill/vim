@@ -204,6 +204,7 @@ Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/colorizer',
 
 if has("vim9script")
     Plug 'bfrg/vim-qf-preview'

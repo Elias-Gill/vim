@@ -162,9 +162,9 @@ highlight GitSignsDeleteInline guifg=#4F345a guibg=NONE
 highlight fugitiveStagedHeading guifg=#97D7BD
 highlight fugitiveStagedModifier guifg=#97D7BD
 highlight fugitiveUnstagedHeading guifg=#C492b1
-highlight fugitiveUnstagedModifier guifg=#BC2c1A
+highlight fugitiveUnstagedModifier guifg=#C79F4B
 highlight fugitiveUntrackedHeading guifg=#C492b1
-highlight fugitiveUntrackedModifier guifg=#BC2c1A
+highlight fugitiveUntrackedModifier guifg=#C79F4B
 highlight gitHashAbbrev guifg=#C79F4B
 
 " CMP
