@@ -14,7 +14,7 @@ highlight IncSearch guibg=NONE guifg=NONE gui=reverse
 highlight CurSearch guifg=#ebfcfb guibg=#4a4a4a
 highlight Search guibg=#252525 guifg=#e6b99d
 
-highlight Normal guifg=#ebfcfb guibg=#1b1b1b
+highlight Normal guifg=#ebdbff guibg=#1b1b1b
 highlight NormalNc guifg=#ebfcfb guibg=#1b1b1b
 highlight NormalFloat guifg=#ebfcfb guibg=#191919
 highlight Visual guibg=#3b3b3e
@@ -80,7 +80,8 @@ highlight VertSplit guifg=#585858
 highlight Title guifg=#C492b1
 
 " Syntax
-highlight Comment guifg=#9a9290
+"highlight Comment guifg=#9a9290
+highlight Comment guifg=#fabd2f
 
 highlight Constant guifg=#C492b1
 highlight String guifg=#C492b1
