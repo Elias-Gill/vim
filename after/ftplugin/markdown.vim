@@ -1,3 +1,4 @@
+setlocal concealcursor=c
 setlocal conceallevel=2
 setlocal linebreak
 setlocal wrap

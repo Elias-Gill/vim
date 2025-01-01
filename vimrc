@@ -60,22 +60,15 @@ set completeopt=menuone,noselect
 set laststatus=2
 set guioptions=c
 set cmdheight=1
+set conceallevel=2
+set concealcursor=c
 
 " Do not disturb (t_vb= disables the terminal bell)
 set confirm
 set hidden
 set shortmess+=c
 set t_vb=
-
-"colorscheme
 set background=dark
-colorscheme lunar
-"colorscheme catppuccin_mocha
-"colorscheme molokai
-
-let g:gruvbox_material_foreground='mix'
-let g:gruvbox_material_better_performance=1
-"colorscheme gruvbox-material
 
 " cursor
 let &t_SI = "\<Esc>[6 q"
@@ -123,13 +116,13 @@ command Q :q
 "  ----------------------
 " |     netrw options    |
 "  ----------------------
-let g:netrw_liststyle = 3
-let g:netrw_keepdir = 0
+"let g:netrw_liststyle = 3
+let g:netrw_keepdir = 1
 let g:netrw_hide = 1  
 let g:netrw_list_hide = '^\.'
 let g:netrw_browse_split = 0
 let g:netrw_winsize = 20
-let g:netrw_banner = 1
+let g:netrw_banner = 0
 
 " Mappings
 augroup netrw_mappings
@@ -191,7 +184,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'roblillack/vim-bufferlist'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish' " dired like navigation
+"Plug 'justinmk/vim-dirvish' " dired like navigation
+Plug 'tpope/vim-vinegar'
 
 " Utils
 Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
@@ -217,4 +211,11 @@ call plug#end()
 packadd cfilter
 let g:NERDCreateDefaultMappings = 1
 let g:indentLine_char_list = ['┊']
+
+let g:gruvbox_material_foreground='mix'
+let g:gruvbox_material_better_performance=1
+colorscheme lunar
+"colorscheme catppuccin_mocha
+"colorscheme gruvbox-material
+"colorscheme molokai
 
