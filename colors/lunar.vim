@@ -10,9 +10,10 @@ highlight lCursor guifg=#C492b1 guibg=#031120
 highlight EndOfBuffer guifg=#585858 guibg=NONE
 highlight MatchParen guibg=#585858
 highlight Substitute guifg=#031120 guibg=#C492b1
-highlight IncSearch guibg=NONE guifg=NONE gui=reverse
-highlight CurSearch guifg=#ebfcfb guibg=#4a4a4a
-highlight Search guibg=#252525 guifg=#e6b99d
+
+highlight IncSearch guibg=#1d2021 guifg=#f5f5ff gui=NONE
+highlight CurSearch guifg=#fabd2f guibg=#4a2f21
+highlight Search guibg=#4a4a4a guifg=#f5f5ff gui=NONE
 
 highlight Normal guifg=#ebdbff guibg=#222323
 highlight NormalNc guifg=#ebdbff guibg=#222323

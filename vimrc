@@ -127,14 +127,11 @@ let g:netrw_banner = 0
 " Mappings
 augroup netrw_mappings
     autocmd!
-    autocmd filetype netrw noremap <silent><buffer> <C-r> <Nop>
     autocmd filetype netrw noremap <silent><buffer> <C-r> <C-l>
+    autocmd filetype netrw noremap <silent><buffer> <C-l> :wincmd l<cr>
 
-    " autocmd filetype netrw noremap <silent><buffer> <C-l> <Nop>
-    autocmd filetype netrw nnoremap <silent><buffer> <C-l> :wincmd l<cr>
-
-    autocmd filetype netrw noremap <silent><buffer> a <Nop>
-    autocmd filetype netrw nnoremap <silent><buffer> q :q<cr>
+    autocmd filetype netrw noremap<buffer> a <nop>
+    autocmd filetype netrw noremap <silent><buffer> <esc> :q<cr>
 augroup END
 
 function Autoclosetree()
@@ -214,7 +211,8 @@ let g:indentLine_char_list = ['┊']
 
 let g:gruvbox_material_foreground='mix'
 let g:gruvbox_material_better_performance=1
-colorscheme lunar
+colorscheme oldworld
+"hi Normal guibg=NONE
 "colorscheme catppuccin_mocha
 "colorscheme gruvbox-material
 "colorscheme molokai
