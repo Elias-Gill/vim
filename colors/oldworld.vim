@@ -52,9 +52,9 @@ highlight StatusLine     cterm=reverse
 highlight StatusLineNC   guibg=#2a2a2c cterm=NONE
 highlight StatusLineTerm guifg=#c9c7cd guibg=#1b1b1c
 highlight StatusLineTermNC guifg=#6c6874
-highlight TabLine        guifg=#6c6874
-highlight TabLineFill    guibg=#27272a
-highlight TabLineSel     guifg=#c9c7cd
+highlight TabLine        guifg=#7c68a4 guibg=NONE cterm=NONE
+highlight TabLineFill    guibg=NONE cterm=NONE term=NONE
+highlight TabLineSel     guifg=#c9c7cd guibg=#404040 cterm=underline
 highlight Terminal       guifg=#c9c7cd guibg=#27272a
 highlight Title          guifg=#90b99f
 highlight Italic         guifg=#92a2d5 gui=italic
@@ -98,7 +98,7 @@ highlight SpecialComment guifg=#6c6874
 highlight Debug guifg=#e6b99d
 highlight Underlined gui=underline
 highlight Error guifg=#f5a191
-highlight Todo guifg=#e6b99d
+highlight Todo guifg=#A0D6DB cterm=underline gui=underline guibg=NONE
 
 " HTML highlight groups
 highlight htmlArg guifg=#b9aeda gui=italic
