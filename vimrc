@@ -58,10 +58,11 @@ set fillchars+=diff:╱
 set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
+set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
 set guioptions=c
 set cmdheight=1
 set conceallevel=2
-set concealcursor=c
+set concealcursor=
 
 " Do not disturb (t_vb= disables the terminal bell)
 set confirm

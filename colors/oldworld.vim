@@ -19,7 +19,7 @@ highlight DiffDelete     guibg=#f5a191 guifg=#27272a
 highlight DiffText       guibg=#e6b99d guifg=#27272a
 highlight EndOfBuffer    guifg=#1c1c1c
 highlight ErrorMsg       guifg=#f5a191
-highlight VertSplit      guifg=#2a2a2c
+highlight VertSplit      guifg=#444444 guibg=NONE cterm=NONE
 highlight WinSeparator   guifg=#313134
 highlight Folded         guifg=#f5a191
 highlight FoldColumn     guibg=#1c1c1c guifg=#6c6874
@@ -48,10 +48,10 @@ highlight SpellBad       guifg=#f5a191 gui=underline
 highlight SpellCap       guifg=#e6b99d
 highlight SpellLocal     guifg=#e6b99d
 highlight SpellRare      guifg=#e6b99d
-highlight StatusLine     cterm=reverse
-highlight StatusLineNC   guibg=#2a2a2c cterm=NONE
-highlight StatusLineTerm guifg=#c9c7cd guibg=#1b1b1c
-highlight StatusLineTermNC guifg=#6c6874
+highlight StatusLine     cterm=NONE guibg=NONE
+highlight StatusLineNc   cterm=NONE guibg=NONE
+highlight StatusLineTerm guifg=#c9c7cd guibg=#3a3a3c cterm=NONE
+highlight StatusLineTermNc guifg=#c9c7cd guibg=#2a2a2c cterm=NONE
 highlight TabLine        guifg=#7c68a4 guibg=NONE cterm=NONE
 highlight TabLineFill    guibg=NONE cterm=NONE term=NONE
 highlight TabLineSel     guifg=#c9c7cd guibg=#404040 cterm=underline
