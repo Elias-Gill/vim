@@ -58,10 +58,11 @@ set fillchars+=diff:╱
 set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
+set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
 set guioptions=c
 set cmdheight=1
 set conceallevel=2
-set concealcursor=c
+set concealcursor=
 
 " Do not disturb (t_vb= disables the terminal bell)
 set confirm
@@ -153,56 +154,75 @@ endif
 "  ----------------------
 " |   plugins section    |
 "  ----------------------
-if has('win32')
-    if empty(glob('~/vimfiles/autoload/plug.vim'))
-        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
-        silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" Function to check and install vim-plug
+function! ConfigurePlugins()
+    if has('win32')
+        let plug_path = expand('~/vimfiles/autoload/plug.vim')
+        if empty(glob(plug_path))
+            let choice = input('vim-plug is not installed. Do you want to install it? (y/n): ')
+            if choice ==? 'y'
+                silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
+                silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
+                autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+                echo 'vim-plug has been installed. Please restart Vim.'
+            else
+                echo 'vim-plug installation skipped.'
+            endif
+        endif
+    else
+        let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+        let plug_path = expand(data_dir . '/autoload/plug.vim')
+        if empty(glob(plug_path))
+            let choice = input('vim-plug is not installed. Do you want to install it? (y/n): ')
+            if choice ==? 'y'
+                silent execute '!curl -fLo '.plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+                autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+                echo 'vim-plug has been installed. Please restart Vim.'
+            else
+                echo 'vim-plug installation skipped.'
+            endif
+        endif
     endif
-else
-    let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-    if empty(glob(data_dir . '/autoload/plug.vim'))
-        silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
+    " --------- PLUGINS LIST -----------
+    call plug#begin()
+
+    " colorscheme
+    Plug 'tomasr/molokai'
+    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'drsooch/gruber-darker-vim'
+
+    " navigation
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'roblillack/vim-bufferlist'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    "Plug 'justinmk/vim-dirvish' " dired like navigation
+    Plug 'tpope/vim-vinegar'
+
+    " Utils
+    Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
+    Plug 'Asheq/close-buffers.vim'
+    Plug 'roblillack/vim-bufferlist'
+    Plug 'tpope/vim-repeat'
+    Plug 'mbbill/undotree'
+    Plug 'tpope/vim-surround'
+    Plug 'szw/vim-maximizer'
+    Plug 'preservim/nerdcommenter'
+    Plug 'Yggdroot/indentLine'
+    Plug 'tpope/vim-fugitive'
+    Plug 'chrisbra/colorizer'
+
+    if has("vim9script")
+        Plug 'bfrg/vim-qf-preview'
     endif
-endif
 
-" --------------------
-call plug#begin()
+    call plug#end()
+endfunction
 
-" colorscheme
-Plug 'tomasr/molokai'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'sainnhe/gruvbox-material'
-Plug 'drsooch/gruber-darker-vim'
-
-" navigation
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'roblillack/vim-bufferlist'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-"Plug 'justinmk/vim-dirvish' " dired like navigation
-Plug 'tpope/vim-vinegar'
-
-" Utils
-Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
-Plug 'Asheq/close-buffers.vim'
-Plug 'roblillack/vim-bufferlist'
-Plug 'tpope/vim-repeat'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-surround'
-Plug 'szw/vim-maximizer'
-Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-fugitive'
-Plug 'chrisbra/colorizer',
-
-if has("vim9script")
-    Plug 'bfrg/vim-qf-preview'
-endif
-
-call plug#end()
-" ----------------------
+" Call the function to check and install vim-plug
+call ConfigurePlugins()
 
 " ---- Plugins configuration ----
 packadd cfilter
@@ -216,4 +236,3 @@ colorscheme oldworld
 "colorscheme catppuccin_mocha
 "colorscheme gruvbox-material
 "colorscheme molokai
-
