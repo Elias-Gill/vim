@@ -1,7 +1,8 @@
 "'finder' without fzf (for some reason)
 function! Find() " find files
     if executable('fd')
-        cexpr! system('fd -type f . "' . input('Pattern: ') . '"')
+        setl errorformat=%f
+        cexpr! system('fd --type f "' . input('Pattern: ') . '" .')
     else
         cexpr! system('find . -type f -iname "' . input('Pattern: ') . '" -printf "%p:1:1:%f\n"')
     endif
