@@ -1,6 +1,10 @@
 "'finder' without fzf (for some reason)
 function! Find() " find files
-    cexpr! system('find . -type f -iname "' . input('Pattern: ') . '" -printf "%p:1:1:%f\n"')
+    if executable('fd')
+        cexpr! system('fd -type f . "' . input('Pattern: ') . '"')
+    else
+        cexpr! system('find . -type f -iname "' . input('Pattern: ') . '" -printf "%p:1:1:%f\n"')
+    endif
 endfunction
 
 function! FinD() " find directories
