@@ -213,6 +213,7 @@ function! ConfigurePlugins()
     Plug 'Yggdroot/indentLine'
     Plug 'tpope/vim-fugitive'
     Plug 'chrisbra/colorizer'
+    Plug 'vim-utils/vim-man'
 
     if has("vim9script")
         Plug 'bfrg/vim-qf-preview'
