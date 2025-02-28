@@ -1,5 +1,6 @@
 function Compile()
-    execute 'w! ~/.cache/inter.nroff'
+    execute 'w! ~/.cache/inter_eqn.nroff'
+    :call system('eqn ~/.cache/inter_eqn.nroff > ~/.cache/inter.nroff')
     :call system('groff -me -t -T ps -dpaper=a4 ~/.cache/inter.nroff > ~/.cache/inter.ps && ps2pdf ~/.cache/inter.ps entrega.pdf')
 endfunction
 
