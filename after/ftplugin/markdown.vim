@@ -1,5 +1,5 @@
-setlocal concealcursor=
-setlocal conceallevel=2
+setlocal concealcursor=c
+setlocal conceallevel=0
 setlocal linebreak
 setlocal wrap
 setlocal tw=0

@@ -7,9 +7,7 @@ nnoremap U <C-r>
 "saving files and exit vim
 nnoremap <leader>wf :w!<CR> 
 nnoremap <leader>wa :wa<cr>
-nnoremap <leader>qa :qa<cr>
-nnoremap <leader>qf :q!<CR>
-nnoremap <leader>qq :q<CR>
+nnoremap ZZ :qa<cr>
 "save all buffers and quit
 nnoremap <leader>tt :Bw<cr> :qa<cr> 
 
@@ -129,4 +127,4 @@ vnoremap <silent>gc <plug>NERDCommenterToggle
 vnoremap <silent>gb <plug>NERDCommenterMinimal
 
 " Fugitive
-nnoremap <leader>G :G<cr>
+nnoremap <leader>G :G<>

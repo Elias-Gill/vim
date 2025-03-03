@@ -61,8 +61,8 @@ set laststatus=2
 set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
 set guioptions=c
 set cmdheight=1
-set conceallevel=2
-set concealcursor=
+set conceallevel=0
+set concealcursor=c
 
 " Do not disturb (t_vb= disables the terminal bell)
 set confirm
@@ -133,13 +133,6 @@ augroup netrw_mappings
 
     autocmd filetype netrw noremap<buffer> a <nop>
     autocmd filetype netrw noremap <silent><buffer> <esc> :q<cr>
-augroup END
-
-function Autoclosetree()
-    if winnr('$') == 1 && bufname() =~ 'NetrwTreeListing' . tabpagenr() | quit | endif
-endfunction
-augroup closeTree
-    autocmd BufEnter * call Autoclosetree()
 augroup END
 
 "  ----------------------
@@ -237,3 +230,12 @@ colorscheme oldworld
 "colorscheme catppuccin_mocha
 "colorscheme gruvbox-material
 "colorscheme molokai
+
+" Auto close nerdtree
+"function Autoclosetree()
+    "if winnr('$') == 1 && bufname() =~ 'NetrwTreeListing' . tabpagenr() | quit | endif
+"endfunction
+"augroup closeTree
+    "autocmd BufEnter * call Autoclosetree()
+"augroup END
+
