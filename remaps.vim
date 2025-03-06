@@ -127,4 +127,4 @@ vnoremap <silent>gc <plug>NERDCommenterToggle
 vnoremap <silent>gb <plug>NERDCommenterMinimal
 
 " Fugitive
-nnoremap <leader>G :G<>
+nnoremap <leader>G :G<cr>
