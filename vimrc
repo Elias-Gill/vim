@@ -130,9 +130,8 @@ augroup netrw_mappings
     autocmd!
     autocmd filetype netrw noremap <silent><buffer> <C-r> <C-l>
     autocmd filetype netrw noremap <silent><buffer> <C-l> :wincmd l<cr>
-
-    autocmd filetype netrw noremap<buffer> a <nop>
     autocmd filetype netrw noremap <silent><buffer> <esc> :q<cr>
+    autocmd filetype netrw noremap <silent><buffer> q :q<cr>
 augroup END
 
 "  ----------------------
