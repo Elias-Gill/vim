@@ -99,9 +99,8 @@ nnoremap <silent><C-w>- :split<cr>
 nnoremap <leader>mt :MaximizerToggle<cr>
 
 "Archivos de configuracion
-nnoremap <leader>cd :cd %:h <CR>
-nnoremap <silent><leader>SO :e $MYVIMRC<CR>
-nnoremap <silent><leader>so :so $MYVIMRC<CR>
+nnoremap <leader>cd :lcd %:h <CR>
+nnoremap <silent><leader>so :e $MYVIMRC<CR>
 if has('win32')
     nnoremap <silent><leader>sm :e $HOME/vimfiles/remaps.vim<CR>
 else 
