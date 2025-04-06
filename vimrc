@@ -125,15 +125,6 @@ let g:netrw_browse_split = 0
 let g:netrw_winsize = 20
 let g:netrw_banner = 0
 
-" Mappings
-augroup netrw_mappings
-    autocmd!
-    autocmd filetype netrw noremap <silent><buffer> <C-r> <C-l>
-    autocmd filetype netrw noremap <silent><buffer> <C-l> :wincmd l<cr>
-    autocmd filetype netrw noremap <silent><buffer> <esc> :q<cr>
-    autocmd filetype netrw noremap <silent><buffer> q :q<cr>
-augroup END
-
 "  ----------------------
 " |  newer vim versions  |
 "  ----------------------
@@ -225,6 +216,7 @@ let g:indentLine_char_list = ['┊']
 let g:gruvbox_material_foreground='mix'
 let g:gruvbox_material_better_performance=1
 colorscheme oldworld
+
 "hi Normal guibg=NONE
 "colorscheme catppuccin_mocha
 "colorscheme gruvbox-material
