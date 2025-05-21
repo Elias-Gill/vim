@@ -1,8 +1,4 @@
-if has('win32')
-    source $HOME/vimfiles/remaps.vim
-else
-    source $HOME/.vim/remaps.vim
-endif
+source $MYVIMDIR/remaps.vim
 
 " --- folding ---
 set nofoldenable
@@ -58,7 +54,7 @@ set fillchars+=diff:╱
 set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
-set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
+set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ \%r\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
 set guioptions=c
 set cmdheight=1
 set conceallevel=0
@@ -128,10 +124,14 @@ let g:netrw_banner = 0
 "  ----------------------
 " |  newer vim versions  |
 "  ----------------------
+if v:version >= 700
+    packadd cfilter
+endif
 if v:version >= 900
     set wildoptions=pum,fuzzy
     set wildmenu
     set splitkeep=screen
+    packadd editorconfig
 endif
 
 "  ----------------------
@@ -139,31 +139,23 @@ endif
 "  ----------------------
 " Function to check and install vim-plug
 function! ConfigurePlugins()
-    if has('win32')
-        let plug_path = expand('~/vimfiles/autoload/plug.vim')
-        if empty(glob(plug_path))
-            let choice = input('vim-plug is not installed. Do you want to install it? (y/n): ')
-            if choice ==? 'y'
-                silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path '~/vimfiles/autoload'"
-                silent !powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' -OutFile '~/vimfiles/autoload/plug.vim'"
-                autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-                echo 'vim-plug has been installed. Please restart Vim.'
+    " Determine autoload path using $MYVIMDIR
+    let s:vimdir = expand('$MYVIMDIR')
+    let s:plug_path = s:vimdir . '/autoload/plug.vim'
+
+    if empty(glob(s:plug_path))
+        let choice = input('vim-plug is not installed. Do you want to install it? (y/n): ')
+        if choice ==? 'y'
+            if has('win32')
+                silent execute '!powershell -NoProfile -ExecutionPolicy Bypass -Command "New-Item -ItemType Directory -Force -Path ''' . s:vimdir . '/autoload''"'
+                silent execute '!powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -UseBasicParsing ''https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'' -OutFile ''' . s:plug_path . '''"'
             else
-                echo 'vim-plug installation skipped.'
+                silent execute '!curl -fLo ' . shellescape(s:plug_path) . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
             endif
-        endif
-    else
-        let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-        let plug_path = expand(data_dir . '/autoload/plug.vim')
-        if empty(glob(plug_path))
-            let choice = input('vim-plug is not installed. Do you want to install it? (y/n): ')
-            if choice ==? 'y'
-                silent execute '!curl -fLo '.plug_path.' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-                autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-                echo 'vim-plug has been installed. Please restart Vim.'
-            else
-                echo 'vim-plug installation skipped.'
-            endif
+            autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+            echo 'vim-plug has been installed. Please restart Vim.'
+        else
+            echo 'vim-plug installation skipped.'
         endif
     endif
 
@@ -209,7 +201,6 @@ endfunction
 call ConfigurePlugins()
 
 " ---- Plugins configuration ----
-packadd cfilter
 let g:NERDCreateDefaultMappings = 1
 let g:indentLine_char_list = ['┊']
 

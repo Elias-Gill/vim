@@ -3,3 +3,5 @@ plugged/
 spell/
 .netrwhist
 *.un~
+.viminfo
+viminfo
