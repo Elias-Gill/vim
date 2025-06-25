@@ -130,6 +130,7 @@ endif
 if v:version >= 900
     set wildoptions=pum,fuzzy
     set wildmenu
+    set smoothscroll "enhances wrap navigation
     set splitkeep=screen
     packadd editorconfig
 endif
