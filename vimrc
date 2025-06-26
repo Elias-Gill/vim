@@ -163,19 +163,13 @@ function! ConfigurePlugins()
     " --------- PLUGINS LIST -----------
     call plug#begin()
 
-    " colorscheme
-    Plug 'tomasr/molokai'
-    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-    Plug 'sainnhe/gruvbox-material'
-    Plug 'drsooch/gruber-darker-vim'
-
     " navigation
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'roblillack/vim-bufferlist'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    "Plug 'justinmk/vim-dirvish' " dired like navigation
     Plug 'tpope/vim-vinegar'
+    "Plug 'justinmk/vim-dirvish' " dired like navigation
 
     " Utils
     Plug 'preservim/vim-markdown' "alternativa: elias-gill/vim-markdown-concealed
