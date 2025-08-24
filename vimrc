@@ -73,7 +73,6 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " --- better grep and search ---
-set ignorecase
 set grepformat=%f:%l:%c:%m
 if executable('rg')
     "use ripgrep instead of grep if possible
