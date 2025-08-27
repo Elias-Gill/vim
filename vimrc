@@ -16,7 +16,7 @@ function! CustomFoldText()
 endfunction
 
 " --- indentation ---
-set diffopt+=vertical
+set diffopt=vertical,internal,filler,closeoff,inline:simple,linematch:40
 set nolist
 set smartindent
 set autoindent
