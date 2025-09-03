@@ -47,8 +47,8 @@ nnoremap <leader>rn :%s/
 vnoremap <leader>rn :s/
 
 "rename utils
-nnoremap <leader>rw yiw:%s/<c-r>"//g<left><left>
-vnoremap <leader>rw y:%s/<c-r>"//g<left><left>
+nnoremap grn yiw:%s/<c-r>"//g<left><left>
+vnoremap grn y:%s/<c-r>"//g<left><left>
 
 "cambiar pestanas
 nnoremap <leader>tn :tabnew<cr>
