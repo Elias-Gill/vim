@@ -21,8 +21,8 @@ highlight EndOfBuffer    guifg=#1c1c1c
 highlight ErrorMsg       guifg=#f5a191
 highlight VertSplit      guifg=#444444 guibg=NONE cterm=NONE
 highlight WinSeparator   guifg=#313134
-highlight Folded         guifg=#f5a191
-highlight FoldColumn     guibg=#1c1c1c guifg=#6c6874
+highlight Folded         guifg=#f5a191 guibg=#2a2a2c gui=italic
+highlight FoldColumn     guifg=#6c6874 guibg=#2a2a2c
 highlight SignColumn     guibg=#1c1c1c guifg=#6c6874
 highlight IncSearch      guifg=#27272a guibg=#e6b99d
 highlight CurSearch      guifg=#27272a guibg=#e6b99d

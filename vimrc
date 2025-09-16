@@ -2,8 +2,8 @@ source $MYVIMDIR/remaps.vim
 
 " --- folding ---
 set nofoldenable
-set foldmethod=syntax
 set fillchars+=foldopen:▾,foldsep:│,foldclose:▸
+set foldmethod=indent
 set foldtext=CustomFoldText()
 function! CustomFoldText()
     let indentation = indent(v:foldstart - 1)
@@ -37,10 +37,10 @@ set numberwidth=4
 set cursorline
 
 " --- wraping ---
-set tw=125
+set tw=95
 set wrap linebreak
 set showbreak=⤷\ \ 
-set colorcolumn=90
+set colorcolumn=80
 set splitbelow splitright
 
 " --- Visuals ---
@@ -48,14 +48,14 @@ set showcmd
 set showmode
 set scrolloff=4
 set termguicolors
-set signcolumn=auto
+set signcolumn=yes
 set fillchars=fold:\ 
 set fillchars+=diff:╱
 set fillchars+=vert:│
 set completeopt=menuone,noselect
 set laststatus=2
 set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ \%r\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
-set guioptions=c
+set guioptions=c "Especifico para Gvim
 set cmdheight=1
 set conceallevel=0
 set concealcursor=c
@@ -102,6 +102,7 @@ set encoding=utf-8
 set hlsearch
 set incsearch
 set showmatch
+set ignorecase
 set smartcase
 
 " Borrar buffers sin usar
