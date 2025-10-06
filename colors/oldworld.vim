@@ -13,10 +13,6 @@ highlight lCursor        guifg=#27272a guibg=#c9c7cd
 highlight CursorIM       guifg=#27272a guibg=#c9c7cd
 highlight CursorLine     guibg=#2a2a2c cterm=NONE
 highlight Directory      guifg=#aca1cf
-highlight DiffAdd        guibg=#90b99f guifg=#27272a
-highlight DiffChange     guifg=#e6b99d gui=underline
-highlight DiffDelete     guibg=#f5a191 guifg=#27272a
-highlight DiffText       guibg=#e6b99d guifg=#27272a
 highlight EndOfBuffer    guifg=#1c1c1c
 highlight ErrorMsg       guifg=#f5a191
 highlight VertSplit      guifg=#444444 guibg=NONE cterm=NONE
@@ -108,17 +104,18 @@ highlight htmlTag guifg=#b4b1ba
 highlight htmlTagN guifg=#b4b1ba
 highlight htmlTagName guifg=#ea83a5
 
-" Diff highlight groups
-highlight DiffAdd guifg=#9dc6ac guibg=#1c1c1c
-highlight DiffChange guifg=#6c6874 guibg=#2a2a2c
-highlight DiffDelete guifg=#f5a191 guibg=#2a2a2c
-highlight DiffText guibg=#6c6874
+" === Diff Groups ===
+highlight DiffAdd      guifg=#9dc6ac guibg=#353539
+highlight DiffChange   guifg=#a6b6e9 guibg=#353539
+highlight DiffDelete   guifg=#f591b2 guibg=#353539
+highlight DiffText     guibg=#2a2a2c
 
-highlight diffAdded guifg=#9dc6ac guibg=#1c1c1c
-highlight diffChanged guifg=#6c6874 guibg=#2a2a2c
-highlight diffNewFile guifg=#c9c7cd gui=bold
-highlight diffOldFile guifg=#c9c7cd gui=bold
-highlight diffRemoved guifg=#6c6874 guibg=#2a2a2c
+" === diff Groups (used by diff plugins and git diffs) ===
+highlight diffAdded    guifg=#9dc6ac guibg=#353539
+highlight diffChanged  guifg=#f5a191 guibg=#353539
+highlight diffNewFile  guifg=#a6b6e9 gui=bold
+highlight diffOldFile  guifg=#a6b6e9 gui=bold
+highlight diffRemoved  guifg=#f591b2 guibg=#353539
 
 " Markdown highlight groups
 highlight markdownH1 guifg=#a6b6e9 gui=bold

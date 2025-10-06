@@ -4,6 +4,9 @@ let g:terminal_path = getcwd()
 inoremap <C-\> <C-w>
 nnoremap U <C-r> 
 
+"macro utility
+nnoremap Q @q
+
 "saving files and exit vim
 nnoremap <leader>wf :w!<CR> 
 nnoremap <leader>wa :wa<cr>
@@ -104,7 +107,7 @@ nnoremap <silent><leader>so :e $MYVIMRC<CR>
 if has('win32')
     nnoremap <silent><leader>sm :e $HOME/vimfiles/remaps.vim<CR>
 else 
-    nnoremap <silent><leader>sm :e ~/.vim/remaps.vim<CR>
+    nnoremap <silent><leader>sm :e ~/.config/vim/remaps.vim<CR>
 endif
 
 "block the arrow keys
