@@ -7,6 +7,9 @@ nnoremap U <C-r>
 "macro utility
 nnoremap Q @q
 
+"oersonal wiki
+nnoremap <silent><leader>wo :tabnew ~/Documentos/wiki/index.md<cr>:lcd %:h<CR>
+
 "saving files and exit vim
 nnoremap <leader>wf :w!<CR> 
 nnoremap <leader>wa :wa<cr>
@@ -18,14 +21,14 @@ nnoremap <leader>tt :Bw<cr> :qa<cr>
 nnoremap <silent><C-p> :Files<CR>
 nnoremap <silent><leader>ff :RG<CR>
 nnoremap <silent><leader>fo :History<CR>
-nnoremap gR :Rg <c-r><c-w><cr>
-vnoremap gR y:Rg <c-r><c-w><cr>
+nnoremap gRR :Rg <c-r><c-w><cr>
+vnoremap gRR y:Rg <c-r><c-w><cr>
 
 nnoremap <silent><C-p> :Files<CR>
 
 "usefull grep mappings
-nnoremap gr :silent grep! <c-r><c-w> <cr>
-vnoremap gr y:silent grep! /<c-r>"/ <cr>
+nnoremap grr :silent grep! <c-r><c-w> <cr>
+vnoremap grr y:silent grep! /<c-r>"/ <cr>
 nnoremap <leader>g :silent grep! 
 
 "file managers
@@ -78,7 +81,10 @@ vnoremap <leader>d "_dD
 nnoremap x "_x
 "copy and paste with center and indent
 vnoremap y ygv<esc>
+nnoremap <leader>p p
 nnoremap p p=`]
+"make Y act like D
+nnoremap Y y$
 
 "increments a decrements
 "nnoremap + <C-a>

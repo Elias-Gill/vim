@@ -52,7 +52,8 @@ set signcolumn=yes
 set fillchars=fold:\ 
 set fillchars+=diff:╱
 set fillchars+=vert:│
-set completeopt=menuone,noselect
+set completeopt=menuone,noselect,fuzzy,preview
+set complete=.,w,b,u,t
 set laststatus=2
 set statusline=%\#Normal#\ %\#StatusLineTerm#\ %f\ %m\ \%r\ %=%l\/%L\ [%p%%]\ %\#Normal#\ 
 set guioptions=c "Especifico para Gvim
@@ -102,8 +103,7 @@ set encoding=utf-8
 set hlsearch
 set incsearch
 set showmatch
-set ignorecase
-set smartcase
+set ignorecase smartcase
 
 " Borrar buffers sin usar
 command Bw :wa | Bwipeout hidden
@@ -184,6 +184,8 @@ function! ConfigurePlugins()
     Plug 'tpope/vim-fugitive'
     Plug 'chrisbra/colorizer'
     Plug 'vim-utils/vim-man'
+    Plug 'preservim/vim-markdown'
+    Plug 'machakann/vim-highlightedyank'
 
     if has("vim9script")
         Plug 'bfrg/vim-qf-preview'
@@ -201,18 +203,17 @@ let g:indentLine_char_list = ['┊']
 
 let g:gruvbox_material_foreground='mix'
 let g:gruvbox_material_better_performance=1
+
 colorscheme oldworld
 
-"hi Normal guibg=NONE
-"colorscheme catppuccin_mocha
-"colorscheme gruvbox-material
-"colorscheme molokai
+" Make C syntax highlight to use c99 standar
+let c_no_curly_error = 1
 
-" Auto close nerdtree
-"function Autoclosetree()
-    "if winnr('$') == 1 && bufname() =~ 'NetrwTreeListing' . tabpagenr() | quit | endif
-"endfunction
-"augroup closeTree
-    "autocmd BufEnter * call Autoclosetree()
-"augroup END
+" Make markdown no to conceal text
+let g:markdown_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
+" Yank highlight
+let g:highlightedyank_highlight_duration = 160
+highlight HighlightedyankRegion cterm=reverse gui=reverse
