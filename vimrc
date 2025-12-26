@@ -28,6 +28,8 @@ set noundofile
 set nolazyredraw
 set clipboard^=unnamed,unnamedplus
 set ttimeoutlen=50 " solve delay when pressing the <esc> key
+set exrc
+set secure
 
 " --- mouse ands line numbers ---
 set nu rnu
